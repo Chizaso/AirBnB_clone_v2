@@ -2,6 +2,10 @@
 """
 Contains the TestDBStorageDocs and TestDBStorage classes
 """
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
 from datetime import datetime
 import inspect
 import models
@@ -15,11 +19,16 @@ from models.state import State
 from models.user import User
 import json
 import os
+<<<<<<< HEAD
 import pycodestyle
+=======
+import pep8
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
 import unittest
 DBStorage = db_storage.DBStorage
 classes = {"Amenity": Amenity, "City": City, "Place": Place,
            "Review": Review, "State": State, "User": User}
+<<<<<<< HEAD
 storage_t = os.getenv("HBNB_TYPE_STORAGE")
 
 
@@ -64,6 +73,9 @@ test_db_storage.py'])
 #     @unittest.skipIf(storage_t != 'db', "not testing db storage")
 #     def test_save(self):
 #         """Test that save properly saves objects to file.json"""
+=======
+
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
 
 class TestDBStorageDocs(unittest.TestCase):
     """Tests to check the documentation and style of DBStorage class"""
@@ -74,14 +86,22 @@ class TestDBStorageDocs(unittest.TestCase):
 
     def test_pep8_conformance_db_storage(self):
         """Test that models/engine/db_storage.py conforms to PEP8."""
+<<<<<<< HEAD
         pep8s = pycodestyle.StyleGuide(quiet=True)
+=======
+        pep8s = pep8.StyleGuide(quiet=True)
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
         result = pep8s.check_files(['models/engine/db_storage.py'])
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
     def test_pep8_conformance_test_db_storage(self):
         """Test tests/test_models/test_db_storage.py conforms to PEP8."""
+<<<<<<< HEAD
         pep8s = pycodestyle.StyleGuide(quiet=True)
+=======
+        pep8s = pep8.StyleGuide(quiet=True)
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
         result = pep8s.check_files(['tests/test_models/test_engine/\
 test_db_storage.py'])
         self.assertEqual(result.total_errors, 0,
@@ -112,11 +132,16 @@ test_db_storage.py'])
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
+<<<<<<< HEAD
     @unittest.skipIf(storage_t != 'db', "not testing db storage")
+=======
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
     def test_all_returns_dict(self):
         """Test that all returns a dictionaty"""
         self.assertIs(type(models.storage.all()), dict)
 
+<<<<<<< HEAD
     @unittest.skipIf(storage_t != 'db', "not testing db storage")
     def test_all_no_class(self):
         """Test that all returns all rows when no class is passed"""
@@ -126,5 +151,16 @@ class TestFileStorage(unittest.TestCase):
         """test that new adds an object to the database"""
 
     @unittest.skipIf(storage_t != 'db', "not testing db storage")
+=======
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+    def test_all_no_class(self):
+        """Test that all returns all rows when no class is passed"""
+
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+    def test_new(self):
+        """test that new adds an object to the database"""
+
+    @unittest.skipIf(models.storage_t != 'db', "not testing db storage")
+>>>>>>> 8af10d6c5863092a75db2c1d90d6b6ba0501a1a5
     def test_save(self):
         """Test that save properly saves objects to file.json"""
